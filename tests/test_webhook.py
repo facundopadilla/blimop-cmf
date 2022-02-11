@@ -53,6 +53,7 @@ class TestWebhook(TestCase):
         }
 
         response = self.client.post(url="/webhook", json=data)
+        self.assertFalse(response.ok)
         # TODO: ver este test con los chicos de Construyendo mi futuro
 
     def test_webhook_successful(self):

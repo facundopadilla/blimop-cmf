@@ -21,7 +21,7 @@ class MessageSchema(BaseModel):
     _from: FromSchema = Field(..., title="Enviado por")
     chat: ChatSchema = Field(..., title="Chat")
     date: int = Field(..., title="Fecha numerica")
-    text: constr(strict=True, max_length=4096) = Field(..., title="Texto del mensaje")
+    text: constr(strict=True, max_length=4096, min_length=1) = Field(..., title="Texto del mensaje")
 
 
 class TelegramMessageSchema(BaseModel):
